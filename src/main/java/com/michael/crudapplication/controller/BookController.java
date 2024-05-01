@@ -2,9 +2,8 @@ package com.michael.crudapplication.controller;
 
 import com.michael.crudapplication.model.Book;
 import com.michael.crudapplication.service.BookService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,5 +20,11 @@ public class BookController {
     @GetMapping("")
     public List<Book> getAllBooks() {
         return bookService.getAllBooks();
+    }
+
+    @ResponseStatus(value = HttpStatus.CREATED)
+    @PostMapping("")
+    public void createBook(@RequestBody Book book) {
+        bookService.createBook(book);
     }
 }
