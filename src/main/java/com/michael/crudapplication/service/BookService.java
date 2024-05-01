@@ -32,4 +32,8 @@ public class BookService {
     public Optional<Book> getOneBook(int id) {
         return bookRepository.findById(id);
     }
+
+    public void deleteBook(int id) {
+        bookRepository.deleteById(id);
+    }
 }
