@@ -33,4 +33,10 @@ public class BookController {
     public void createBook(@RequestBody Book book) {
         bookService.createBook(book);
     }
+
+    @ResponseStatus(value = HttpStatus.NO_CONTENT)
+    @DeleteMapping("{id}")
+    public void deleteBook(@PathVariable int id) {
+        bookService.deleteBook(id);
+    }
 }
