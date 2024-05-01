@@ -18,6 +18,10 @@ public class Book {
 
     private String type;
 
+    public Book() {
+
+    }
+
     public Book(int id, String author, String title, String type) {
         this.id = id;
         this.author = author;
